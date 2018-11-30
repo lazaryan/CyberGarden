@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    @@include('template/_meta.html')
+    <title>Login</title>
+
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="body flex_center">
+<form action="register.php" class="login">
+    <h1 class="login__title">Регистрация</h1>
+    <div class="login__block login__block_requered">
+        <label class="login_text" for="name">Имя:</label>
+        <input type="text" name="name" id="name">
+    </div>
+    <div class="login__block login__block_requered">
+        <label class="login_text" for="password">Парроль:</label>
+        <input type="password" name="password" id="password">
+    </div>
+    <div class="login__block">
+        <label class="login_text" for="email">Почта:</label>
+        <input type="text" name="email" id="email">
+    </div>
+    <div class="login__block login__block_flex">
+        <div>
+            <label for="student">Ученик:</label>
+            <input type="radio" name="state" id="student">
+        </div>
+        <div>
+            <label for="teacher">Преподователь:</label>
+            <input type="radio" name="state" id="teacher">
+        </div>
+    </div>
+    <input type="submit" class="login__submit" value="ОТправить">
+</form>
+<script>
+
+</script>
+</body>
+</html>
