@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body class="body flex_center">
-<form action="register.php" class="login">
+<form action="register.php" class="login" id="form">
     <h1 class="login__title">Регистрация</h1>
     <div class="login__block login__block_requered">
         <label class="login_text" for="name">Имя:</label>
@@ -31,10 +31,24 @@
             <input type="radio" value="on" name="state" id="teacher">
         </div>
     </div>
-    <input type="submit" class="login__submit" value="Оnправить">
+    <input type="submit" class="login__submit" id="submit" value="Оnправить">
 </form>
 <script>
+    var submit = document.querySelector('#submit');
+    var form = document.querySelector('#form');
 
+    submit.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        var obj = {
+            name: form.querySelector('#name').value,
+            password: form.querySelector('#password').value,
+            email: form.querySelector('#email').value,
+            state: form.querySelector('input[name="state"]:checked').value
+        }
+
+        sessionStorage.setItem('person', obj);
+    })
 </script>
 </body>
 </html>

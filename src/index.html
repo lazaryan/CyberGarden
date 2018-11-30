@@ -5,10 +5,43 @@
     <title>PixelArt</title>
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
-<body>
-<h1>Start!11</h1>
-<div></div>
-<script src="js/main.js" defer></script>
+<body id="body">
+<script>
+    //sessionStorage.setItem('person', '');
+    if (sessionStorage.getItem('person')) {
+        document.location.href = document.location.href + 'main.html';
+    }
+</script>
+@@include('template/_nav.html')
+<main class="main">
+    <form action="#" class="register">
+        <h2 class="register__title">Регистрация</h2>
+        <div class="register__form">
+            <div class="register__item">
+                <label class="register__label">Имя</label>
+                <input type="login" class="register__value" name="name" required>
+            </div>
+            <div class="register__item">
+                <label class="register__label">Пароль</label>
+                <input type="password" class="register__value" name="password" required>
+            </div>
+            <div class="register__item">
+                <label class="register__label">Почта</label>
+                <input type="text" class="register__value" name="email">
+            </div>
+            <div class="register__item register__item_flex">
+                <label class="register__label register__label_inline">Ученик</label>
+                <input type="radio" name="state" value="off" class="register__radio" checked>
+                <label class="register__label register__label_inline">Учитель</label>
+                <input type="radio" name="state" value="on" class="register__radio">
+            </div>
+        </div>
+        <div class="register__submit">
+            <input type="submit" class="register__submit-i">
+        </div>
+    </form>
+</main>
 </body>
 </html>
