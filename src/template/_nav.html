@@ -1,5 +1,7 @@
 <nav class="nav nav_between">
-    <div class="nav__logo"></div>
+    <div class="nav__logo">
+        <img src="img/Icon.png" alt="">
+    </div>
     <div class="nav__search">
         <div class="search">
             <input type="text" id="searchText" name="search" class="nav__input" required>
@@ -13,16 +15,9 @@
             <button class="search__active" id="search" value="Поиск" id="searchAction">Поиск</button>
         </div>
     </div>
-    <div class="nav__sign-in"></div> 
+    <div class="nav__log">
+        <button class="nav__sign-in">Sign In</button>
+        <button class="nav__sign-out">Sign Out</button>
+    </div>
 </nav>
-<script>
-    var active_search = document.querySelector('#searchAction');
-    var search_text = document.querySelector('#searchText');
-    active_search.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        if (!search_text.value) return;
-
-
-    })
-</script>
+<script src="js/nav.js" defer></script>
