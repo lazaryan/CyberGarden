@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body id="body">
 <script>
@@ -17,6 +18,22 @@
 </script>
 @@include('template/_nav.html')
 <main class="main">
+    <!--
+
+    -->
+    <div class="post">
+        <div class="text">
+            <h3> Назввание </h3>
+            <p> Описание </p>
+            <p> Тематика </p>
+            <p> Препод </p>
+        </div>
+
+        <div class="photo">
+            <!-- Фото -->
+        </div>
+    </div>
+
     <div class="register" id="form">
         <h2 class="register__title">Регистрация</h2>
         <div class="register__form">
@@ -44,6 +61,7 @@
             <button type="submit" id="submit" class="register__submit-i">Отправить</button>
         </div>
     </div>
+
 </main>
 <script>
     var submit = document.querySelector('#submit');
