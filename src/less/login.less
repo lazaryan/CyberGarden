@@ -85,3 +85,70 @@
     color: #222;
   }
 }
+
+.body_flex {
+  height: 100vh;
+  background-color: #2e5aa5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  &__form {
+    border: 1px solid #222222;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #b25d5d;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 22px;
+    line-height: 35px;
+    margin-bottom: 20px;
+  }
+
+  &__body {
+    width: 300px;
+  }
+
+  &__label {
+    display: block;
+    font-size: 17px;
+    line-height: 30px;
+
+    &::after {
+      content: ':'
+    }
+  }
+
+  &__input {
+    width: 80%;
+    font-size: 20px;
+    border: none;
+    border-bottom: 2px solid #222;
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+    transition: .5s;
+
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid #3084a5;
+    }
+  }
+
+  &__submit {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+    &-i {
+      padding: 5px;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

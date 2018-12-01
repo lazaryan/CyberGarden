@@ -19,7 +19,11 @@ signOut.addEventListener('click', (e) => {
 
         }
     }
-})
+});
+
+active_search.addEventListener('click', (e) => {
+    constructor.getNotification(select.value);
+});
 
 function createSelect(arr) {
     let data = JSON.parse(arr);

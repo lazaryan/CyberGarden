@@ -2,53 +2,28 @@
 <html lang="en">
 <head>
     @@include('template/_meta.html')
+
     <title>Login</title>
 
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/login.css">
 </head>
-<body class="body flex_center">
-<form action="register.php" class="login" id="form" method="post">
-    <h1 class="login__title">Регистрация</h1>
-    <div class="login__block login__block_requered">
-        <label class="login_text" for="name">Имя:</label>
-        <input type="text" name="name" id="name">
-    </div>
-    <div class="login__block login__block_requered">
-        <label class="login_text" for="password">Пароль:</label>
-        <input type="password" name="password"  id="password">
-    </div>
-    <div class="login__block">
-        <label class="login_text" for="email">Почта:</label>
-        <input type="text" name="email" id="email">
-    </div>
-    <div class="login__block login__block_flex">
-        <div>
-            <label for="student">Ученик:</label>
-            <input type="radio" value="off" name="state" id="student" checked>
+<body class="body_flex">
+    <form action="login.php" class="login__form" method="post">
+        <h2 class="login__title">Вход</h2>
+        <div class="login__body">
+            <div class="login__field">
+                <label for="" class="login__label">Логин</label>
+                <input type="text" class="login__input" autocomplete="off" />
+            </div>
+            <div class="login__field">
+                <label for="" class="login__label">Пароль</label>
+                <input type="password" class="login__input" autocomplete="off" />
+            </div>
         </div>
-        <div>
-            <label for="teacher">Преподователь:</label>
-            <input type="radio" value="on" name="state" id="teacher">
+        <div class="login__submit">
+            <input type="submit" value="Войти" class="login__submit-i">
         </div>
-    </div>
-    <input type="submit" class="login__submit" id="submit" value="Оnправить">
-</form>
-<script>
-    var submit = document.querySelector('#submit');
-    var form = document.querySelector('#form');
-
-    submit.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        var obj = {
-            name: form.querySelector('#name').value,
-            password: form.querySelector('#password').value,
-            email: form.querySelector('#email').value,
-            state: form.querySelector('input[name="state"]:checked').value
-        }
-
-        sessionStorage.setItem('person', obj);
-    })
-</script>
+    </form>
 </body>
 </html>
