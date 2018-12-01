@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta   charset="UTF-8" />
+<meta   name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<meta   http-equiv="X-UA-Compatible"
+        content="ie=edge" />
+
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <title>Teacher</title>
+
+    <link rel="stylesheet" href="css/teacher.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+</head>
+<body>
+    <nav class="nav nav_between">
+    <div class="nav__logo">
+        <img src="img/Icon.png" alt="">
+    </div>
+    <div class="nav__search">
+        <div class="search">
+            <input type="text" id="searchText" name="search" class="nav__input" required>
+            <select name="" id="" class="nav__select">
+                <option value="0">Все</option>
+                <option value="1">Спортивные секция</option>
+                <option value="2">Довузовское образование</option>
+                <option value="3">Дошкольное образование</option>
+                <option value="4">Дополнительные занятия</option>
+            </select>
+            <button class="search__active" id="search" value="Поиск" id="searchAction">Поиск</button>
+        </div>
+    </div>
+    <div class="nav__log">
+        <button class="nav__sign-in">Sign In</button>
+        <button class="nav__sign-out">Sign Out</button>
+    </div>
+</nav>
+<script src="js/nav.js" defer></script>
+    <div class="body">
+        <div class="block_menu">
+
+            <div class="ava_fio">
+                <!-- Запилить аватарку -->
+
+                <h3>Вэнди Кордрой</h3>
+            </div>
+
+            <div class="list_of_circles">
+                <p>Курсы валки леса</p>
+            </div>
+            <div class="add__baner" id="addBaner">
+                + Курсы
+            </div>
+        </div>
+
+        <div class="block_info">
+            <div class="circle_info">
+                <h3> Название кружка </h3>
+                <p> Краткое описание </p>
+                <!-- Картиночки -->
+                <p>Дни недели и время</p>
+                <p>Место</p>
+            </div>
+
+            <div class="comment">
+                <p>Отзыв</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/teacher.js" defer></script>
+</body>
+</html>

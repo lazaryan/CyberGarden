@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta   charset="UTF-8" />
+<meta   name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<meta   http-equiv="X-UA-Compatible"
+        content="ie=edge" />
+
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="body flex_center">
+<form action="register.php" class="login" id="form" method="post">
+    <h1 class="login__title">Регистрация</h1>
+    <div class="login__block login__block_requered">
+        <label class="login_text" for="name">Имя:</label>
+        <input type="text" name="name" id="name">
+    </div>
+    <div class="login__block login__block_requered">
+        <label class="login_text" for="password">Пароль:</label>
+        <input type="password" name="password"  id="password">
+    </div>
+    <div class="login__block">
+        <label class="login_text" for="email">Почта:</label>
+        <input type="text" name="email" id="email">
+    </div>
+    <div class="login__block login__block_flex">
+        <div>
+            <label for="student">Ученик:</label>
+            <input type="radio" value="off" name="state" id="student" checked>
+        </div>
+        <div>
+            <label for="teacher">Преподователь:</label>
+            <input type="radio" value="on" name="state" id="teacher">
+        </div>
+    </div>
+    <input type="submit" class="login__submit" id="submit" value="Оnправить">
+</form>
+<script>
+    var submit = document.querySelector('#submit');
+    var form = document.querySelector('#form');
+
+    submit.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        var obj = {
+            name: form.querySelector('#name').value,
+            password: form.querySelector('#password').value,
+            email: form.querySelector('#email').value,
+            state: form.querySelector('input[name="state"]:checked').value
+        }
+
+        sessionStorage.setItem('person', obj);
+    })
+</script>
+</body>
+</html>
