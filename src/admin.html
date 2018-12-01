@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    @@include('template/_meta.html')
+    <title>Admin</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+@@include('template/_nav.html')
+
+<div class="create-card">
+    <select name="category" id="categoryNewCard" class=""></select>
+    <textarea name="title" id="cardNewTitle" cols="30" rows="10">Заголовок</textarea>
+    <textarea name="description" id="cardNewDesk" cols="30" rows="10">Текст</textarea>
+    <button id="sendNewCard">Отправить</button>
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

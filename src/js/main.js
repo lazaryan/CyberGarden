@@ -42,7 +42,7 @@ class Construct {
     getElement(el) {
         let link = document.createElement('a');
         link.classList = 'notification__card';
-        link.href = '#';
+        link.href = `./post/${el.id}`;
 
         link.innerHTML = `
             <h2 class="notification__title">${el.title}</h2>
