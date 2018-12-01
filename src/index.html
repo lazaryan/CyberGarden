@@ -17,7 +17,7 @@
 </script>
 @@include('template/_nav.html')
 <main class="main">
-    <form action="register.php" class="register" id="form" method="post">
+    <div class="register" id="form">
         <h2 class="register__title">Регистрация</h2>
         <div class="register__form">
             <div class="register__item">
@@ -41,25 +41,43 @@
         </div>
         <div class="register__submit">
             <a href="./login.html" class="register__login">Уже зарегистрирован</a>
-            <input type="submit" id="submit" class="register__submit-i">
+            <button type="submit" id="submit" class="register__submit-i">Отправить</button>
         </div>
-    </form>
+    </div>
 </main>
 <script>
     var submit = document.querySelector('#submit');
     var form = document.querySelector('#form');
 
     submit.addEventListener('click', function(e) {
+        e.preventDefault();
+        let inputs = form.querySelectorAll('input');
+        let text = '';
+        for (let i = 0; i < inputs.length; i++) {
+            console.log(inputs[i])
+            if (inputs[i].type == 'radio'){
+                if (inputs[i].checked) {
+                    text += `${text ? '&&' : ''}${inputs[i].name}="${inputs[i].value}"`
+                }
+            } else {
+                text += `${text ? '&&' : ''}${inputs[i].name}="${inputs[i].value}"`
+            }
+        }
 
-        var obj = {
-            name: form.querySelector('#name').value,
-            password: form.querySelector('#password').value,
-            email: form.querySelector('#email').value,
-            state: form.querySelector('input[name="state"]:checked').value
-        };
+        let xhr = new XMLHttpRequest();
 
-        sessionStorage.setItem('person', obj);
-    })
-</script>
+        xhr.open('POST', 'register.php', true);
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xhr.send(text);
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState != 4) return;
+
+            if (xhr.status != 200) {
+                alert(xhr.status + ': ' + xhr.statusText)
+            } else {}
+        }
+    });
+;</script>
 </body>
 </html>
