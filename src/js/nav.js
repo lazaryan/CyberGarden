@@ -2,6 +2,7 @@ let active_search = document.querySelector('#searchAction');
 let search_text = document.querySelector('#searchText');
 let signOut = document.querySelector('#signOut');
 let select = document.querySelector('#navSelect');
+let options = [];
 
 signOut.addEventListener('click', (e) => {
     let xhr = new XMLHttpRequest();
@@ -25,11 +26,9 @@ active_search.addEventListener('click', (e) => {
     constructor.getNotification(select.value);
 });
 
-function createSelect(arr) {
-    let data = JSON.parse(arr);
-
+function createSelect(data, el) {
     data.forEach((option) => {
-        select.appendChild(createOption(option));
+        el.appendChild(createOption(option));
     })
 }
 
@@ -53,6 +52,7 @@ xhr.onreadystatechange = function() {
     if (xhr.status != 200) {
         console.warn(xhr.status + ': ' + xhr.statusText);
     } else {
-        createSelect(xhr.responseText);
+        options = JSON.parse(xhr.responseText);
+        createSelect(options, select);
     }
 }

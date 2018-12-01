@@ -12,13 +12,15 @@
 @@include('template/_nav.html')
 
 <div class="create-card">
-    <select name="category" id="categoryNewCard" class=""></select>
+    <select name="category" id="categoryNewCard" class="">
+        <option value="Резюме">Резюме</option>
+    </select>
     <textarea name="title" id="cardNewTitle" cols="30" rows="10">Заголовок</textarea>
     <textarea name="description" id="cardNewDesk" cols="30" rows="10">Текст</textarea>
     <button id="sendNewCard">Отправить</button>
 </div>
 
-<script src="js/main.js"></script>
-
+<script src="js/main.js" defer></script>
+<script src="js/admin.js" defer></script>
 </body>
 </html>
