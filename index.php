@@ -45,6 +45,7 @@
                 break;
             case 'post':
                 include('open_post.php');
+            
                 /*
             case "logout":
                 include("php/logout.php");
