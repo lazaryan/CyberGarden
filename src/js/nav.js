@@ -1,9 +1,21 @@
 let active_search = document.querySelector('#searchAction');
 let search_text = document.querySelector('#searchText');
-active_search.addEventListener('click', (e) => {
-    e.preventDefault();
+let signOut = document.querySelector('#signOut');
 
-    if (!search_text.value) return;
+signOut.addEventListener('click', (e) => {
+    let xhr = new XMLHttpRequest();
 
+    xhr.open('POST', './logout', true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send(null);
 
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState != 4) return;
+
+        if (xhr.status != 200) {
+            console.warn(xhr.status + ': ' + xhr.statusText);
+        } else {
+
+        }
+    }
 })
