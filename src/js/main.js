@@ -16,7 +16,7 @@ class Construct {
         xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
          xhr.send(category ? `category=${category}` : null);
 
-        xhr.onreadystatechange = function() {
+        xhr.onreadystatechange = (function() {
            if (xhr.readyState != 4) return;
 
            if (xhr.status != 200) {
@@ -25,7 +25,7 @@ class Construct {
                constructor.clearBlock();
                this.create(xhr.responseText);
            }
-       }
+       }).bind(this);
     }
 
     /**
@@ -47,6 +47,7 @@ class Construct {
         link.innerHTML = `
             <h2 class="notification__title">${el.title}</h2>
             <div class="notification__description">${el.text}</div>
+            <div class="notification__category">${el.category}</div>
         `;
 
         return link;
