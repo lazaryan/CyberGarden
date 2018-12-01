@@ -14,7 +14,7 @@ class Construct {
 
         xhr.open('POST', 'teachers.php', true);
         xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        /* xhr.send(category ? `category=${category}` : null);
+         xhr.send(category ? `category=${category}` : null);
 
         xhr.onreadystatechange = function() {
            if (xhr.readyState != 4) return;
@@ -24,7 +24,7 @@ class Construct {
            } else {
                this.create(xhr.responseText);
            }
-       }*/
+       }
     }
 
     /**
