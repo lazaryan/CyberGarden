@@ -22,6 +22,7 @@ class Construct {
            if (xhr.status != 200) {
                console.warn(xhr.status + ': ' + xhr.statusText);
            } else {
+               constructor.clearBlock();
                this.create(xhr.responseText);
            }
        }
@@ -50,4 +51,10 @@ class Construct {
 
         return link;
     }
+
+    clearBlock () {
+        this.el.innerHTML = '';
+    }
 }
+
+var constructor = new Construct('.main__notification');
