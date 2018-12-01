@@ -1,5 +1,28 @@
-<nav class="nav nav_around">
+<nav class="nav nav_between">
     <div class="nav__logo"></div>
-    <div class="nav__search"></div>
-    <div class="nav__sign-in"></div>
+    <div class="nav__search">
+        <div class="search">
+            <input type="text" id="searchText" name="search" class="nav__input" required>
+            <select name="" id="" class="nav__select">
+                <option value="0">Все</option>
+                <option value="1">Спортивные секция</option>
+                <option value="2">Довузовское образование</option>
+                <option value="3">Дошкольное образование</option>
+                <option value="4">Дополнительные занятия</option>
+            </select>
+            <button class="search__active" id="search" value="Поиск" id="searchAction">Поиск</button>
+        </div>
+    </div>
+    <div class="nav__sign-in"></div> 
 </nav>
+<script>
+    var active_search = document.querySelector('#searchAction');
+    var search_text = document.querySelector('#searchText');
+    active_search.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (!search_text.value) return;
+
+
+    })
+</script>
