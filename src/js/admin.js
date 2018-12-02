@@ -1,3 +1,5 @@
+//get data
+
 let newSelect = document.querySelector('#categoryNewCard');
 let addNewCard = document.querySelector('#sendNewCard');
 
@@ -25,3 +27,17 @@ addNewCard.addEventListener('click', (e) => {
         }
     };
 });
+
+//add form
+let action_form = document.querySelector('#addCard');
+let form_card = document.querySelector('#redactorCard');
+
+action_form.addEventListener('click', () => {
+    form_card.style.display = '';
+})
+
+//close_form
+let close_form = document.querySelector('#closeRedactor');
+close_form.addEventListener('click', () => {
+    form_card.style.display = 'none';
+})

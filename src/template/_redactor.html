@@ -1,17 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    @@include('template/_meta.html')
-    <title>Admin</title>
+<link rel="stylesheet" href="css/admin.css">
 
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/admin.css">
-</head>
-<body>
-@@include('template/_nav.html')
-
-<div class="create-card">
+<div class="create-card" id="redactorCard" style="display: none">
+    <span id="closeRedactor" class="close-redactor"></span>
     <select name="category" id="categoryNewCard" class="">
         <option value="Резюме">Резюме</option>
     </select>
@@ -22,6 +12,4 @@
     <button id="sendNewCard">Отправить</button>
 </div>
 
-<script src="js/main.js" defer></script>
-</body>
-</html>
+<script src="js/admin.js" defer></script>
