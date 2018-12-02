@@ -1,12 +1,10 @@
 {
   "name": "PixelArt",
   "version": "0.0.1",
-  "description": "Project for Study Students",
+  "description": "project for Students",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set NODE_ENV=development&&gulp",
-    "dev": "set NODE_ENV=development&&gulp",
-    "prod": "gulp prod"
+    "start": "gulp"
   },
   "author": "Lazaryan S.K.",
   "license": "ISC",
@@ -24,6 +22,10 @@
     "gulp-imagemin": "^4.1.0",
     "gulp-plumber": "^1.2.0",
     "gulp-rename": "^1.2.2",
+<<<<<<< HEAD
+=======
+    "gulp-sass": "^4.0.2",
+>>>>>>> 7c9822f494c1dabfd94c9d9359c6079c7e19749e
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify-es": "^1.0.1",
     "gulp-useref": "^3.1.5",

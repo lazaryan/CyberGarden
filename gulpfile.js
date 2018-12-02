@@ -11,6 +11,14 @@ const combine       = require('stream-combiner2').obj;
 const less          = require('gulp-less');
 const autoprefixer  = require('gulp-autoprefixer');
 const sourcemaps    = require('gulp-sourcemaps');
+
+/*html*/
+const htmlmin       = require('gulp-htmlmin');
+const fileinclude   = require('gulp-file-include');
+
+/*styles*/
+const sass          = require('gulp-sass');
+const autoprefixer  = require('gulp-autoprefixer');
 const csso          = require('gulp-csso');
 
 /*js*/
@@ -67,6 +75,13 @@ gulp.task('img', () => {
         .pipe(gulp.dest('./dist/img'));
 });
 
+    gulp.src('src/sass/**/[^_]*.sass')
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(autoprefixer(['last 50 versions']))
+        .pipe(gulp.dest('./dist/css'));
+});
+
 gulp.task('js', () => {
     gulp.src('src/js/**/*.*')
         .pipe(plumber())
@@ -96,3 +111,6 @@ gulp.task('watch', () => {
 
 gulp.task('default', ['styles', 'img','html', 'js', 'livereload', 'watch']);
 gulp.task('prod', ['styles', 'html', 'img', 'js']);
+
+
+gulp.task('default', ['styles', 'img', 'html', 'js', 'livereload', 'watch']);
