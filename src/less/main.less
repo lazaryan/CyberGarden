@@ -1,24 +1,15 @@
 @import (less) "_media.less";
 
-//rgb(163, 163, 163) - Фон центральный
-//rgb() - фон внешний
-
-
 * {
   margin: 0;
   padding: 0;
 }
 
 .main {
-  height: 92vh;
-  box-sizing: border-box;
   width: 100%;
-  background-color: #222;
-  position: relative;
-  padding-top: 30px;
+  background-color: #8d8b8d;
 
   &__notification {
-    background-color: #a33;
     width: 1200px;
     height: 500px;
     margin: auto;
@@ -26,6 +17,16 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #d0d0d0;
+  height: 100vh;
+  box-sizing: border-box;
+  padding-top: 10vh;
 }
 
 .notification {
