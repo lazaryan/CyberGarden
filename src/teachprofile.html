@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/nav.css" />
 </head>
-<body>
+<body class="main">
     @@include('template/_nav.html')
-    <div class="body">
-
+    <div class="container">
+    <main class="body">
         <div class="side">
 
             <div class="list">
@@ -32,7 +32,8 @@
             <p>Место</p>
         </div>
 
+    </main>
+        @@include('template/_redactor.html')
     </div>
-@@include('template/_redactor.html')
 </body>
 </html>

@@ -115,12 +115,22 @@
 
   &__label {
     display: block;
+    width: 100%;
+    text-align: center;
     font-size: 17px;
     line-height: 30px;
 
     &::after {
       content: ':'
     }
+  }
+
+  &__field {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
   }
 
   &__input {
@@ -130,7 +140,7 @@
     border-bottom: 2px solid #222;
     background-color: transparent;
     outline: none;
-    color: #fff;
+    color: #000;
     transition: .5s;
 
     &:hover,
@@ -142,13 +152,29 @@
   &__submit {
     margin-top: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 
     &-i {
       padding: 5px;
       font-size: 20px;
       border: none;
       cursor: pointer;
+      transition: .5s;
+      border-radius: 5px;
+      border: 1px solid #c4c2c4;
+      background-color: #c4c2c4;
+
+      &:hover {
+        background-color: #a8a6a8;
+        border: 1px solid #222;
+        box-sizing: border-box;
+      }
     }
+  }
+
+  &__register {
+    font-size: 15px;
+    line-height: 30px;
+    text-decoration: none;
   }
 }
