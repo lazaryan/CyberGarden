@@ -1,7 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-    @@include('template/_meta.html')
+    <meta   charset="UTF-8" />
+<meta   name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<meta   http-equiv="X-UA-Compatible"
+        content="ie=edge" />
+
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <title>Document</title>
 
     <link rel="stylesheet" href="css/main.css">
@@ -46,6 +52,40 @@
     <img src="img/mushroom1.png" id="mushroom" class="image">
     <img src="img/star.png" id="star" class="image">
     <img src="img/Tottoro.png" id="tottoro" class="image">
+    
+    <script>
+        let bth = document.querySelector('#submit');
 
+        bth.addEventListener('click', function() {
+            let name = document.querySelector('#name').value;
+            let password = document.querySelector('#password').value;
+            let email = document.querySelector('#email').value;
+            let state = document.querySelector('[name="state"]:checked').value;
+
+            text = `name=${name}&&password=${password}&&email=${email}&&state=${state}`;
+            console.log(text);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('POST', './register.php', true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.send(text);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState != 4) return;
+
+                if (xhr.status != 200) {
+                    console.warn(xhr.status + ': ' + xhr.statusText);
+                } else {
+                    console.log(xhr);
+                    if (xhr.response == 'Ошибка получения данных') {
+                        alert("Ошибка регистрации")
+                    } else {
+                        window.location.href = './main'
+                    }
+                }
+            };
+        })
+    </script>
 </body>
 </html>

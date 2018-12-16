@@ -1,7 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-    @@include('template/_meta.html')
+    <meta   charset="UTF-8" />
+<meta   name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<meta   http-equiv="X-UA-Compatible"
+        content="ie=edge" />
+
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <title>Admin</title>
 
     <link rel="stylesheet" href="css/main.css">
@@ -9,7 +15,25 @@
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-@@include('template/_nav.html')
+<nav class="nav nav_between">
+    <a class="nav__logo" href="./index.html">
+        <img src="img/Icon.png" alt="">
+    </a>
+    <div class="nav__search">
+        <div class="search">
+            <input type="text" id="searchText" name="search" class="nav__input" required>
+            <select name="" id="navSelect" class="nav__select">
+                <option value="Все">Все</option>
+            </select>
+            <button class="search__active" value="Поиск" id="searchAction">Поиск</button>
+        </div>
+    </div>
+    <div class="nav__log">
+        <a href="./login.html" class="nav__sign-in" id="signIn">Вход</a>
+        <button class="nav__sign-out" id="signOut">Выход</button>
+    </div>
+</nav>
+<script src="js/nav.js" defer></script>
 
 <div class="create-card">
     <select name="category" id="categoryNewCard" class="">

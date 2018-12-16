@@ -8,10 +8,27 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/nav.css" />
 </head>
-<body class="main">
-    @@include('template/_nav.html')
-    <div class="container">
-    <main class="body">
+<body>
+    <nav class="nav nav_between">
+    <div class="nav__logo">
+        <img src="img/Icon.png" alt="">
+    </div>
+    <div class="nav__search">
+        <div class="search">
+            <input type="text" id="searchText" name="search" class="nav__input" required>
+            <select name="" id="navSelect" class="nav__select"> </select>
+            <button class="search__active" value="Поиск" id="searchAction">Поиск</button>
+        </div>
+    </div>
+    <div class="nav__log">
+        <button class="nav__sign-in" id="signIn">Sign In</button>
+        <button class="nav__sign-out" id="signOut">Sign Out</button>
+    </div>
+</nav>
+<script src="js/nav.js" defer></script>
+<div class="container">
+    <div class="body">
+
         <div class="side">
 
             <div class="list">
@@ -32,8 +49,23 @@
             <p>Место</p>
         </div>
 
-    </main>
-        @@include('template/_redactor.html')
     </div>
+</div>
+<link rel="stylesheet" href="css/admin.css">
+
+<div class="create-card" id="redactorCard" style="display: none">
+    <span id="closeRedactor" class="close-redactor"></span>
+    <select name="category" id="categoryNewCard" class="">
+        <option value="Репетиторство">Репетиторство</option>
+        <option value="Спорт">Спорт</option>
+    </select>
+    <h2> Заголовок </h2>
+    <textarea name="title" id="cardNewTitle" cols="30" rows="10" required></textarea>
+    <h2> Текст </h2>
+    <textarea name="description" id="cardNewDesk" cols="30" rows="10" required></textarea>
+    <button id="sendNewCard">Отправить</button>
+</div>
+
+<script src="js/admin.js" defer></script>
 </body>
 </html>
