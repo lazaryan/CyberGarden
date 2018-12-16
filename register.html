@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta   charset="UTF-8" />
+<meta   name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<meta   http-equiv="X-UA-Compatible"
+        content="ie=edge" />
+
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/register.css">
+
+</head>
+<body>
+
+    <div class="register" id="form">
+        <h2 class="register__title">Регистрация</h2>
+        <div class="register__form">
+            <div class="register__item">
+                <label class="register__label">Имя</label>
+                <input type="login" class="register__value" name="name" id="name" required>
+            </div>
+            <div class="register__item">
+                <label class="register__label">Пароль</label>
+                <input type="password" class="register__value" name="password" id="password" required>
+            </div>
+            <div class="register__item">
+                <label class="register__label">Почта</label>
+                <input type="text" class="register__value" name="email" id="email">
+            </div>
+            <div class="register__item register__item_flex">
+                <label class="register__label register__label_inline">Ученик</label>
+                <input type="radio" name="state" value="off" class="register__radio" checked>
+                <label class="register__label register__label_inline">Учитель</label>
+                <input type="radio" name="state" value="on" class="register__radio">
+            </div>
+        </div>
+        <div class="register__submit">
+            <a href="./login.html" class="register__login">Уже зарегистрирован</a>
+            <button type="submit" id="submit" class="register__submit-i">Отправить</button>
+        </div>
+    </div>
+
+    <img src="img/meowtwo.png" id="meowtwo" class="image">
+    <img src="img/megaman.png" id="megaman" class="image">
+    <img src="img/ponyta.png" id="ponyta" class="image">
+    <img src="img/lapras.png" id="lapras" class="image">
+    <img src="img/mario.png" id="mario" class="image">
+    <img src="img/mushroom1.png" id="mushroom" class="image">
+    <img src="img/star.png" id="star" class="image">
+    <img src="img/Tottoro.png" id="tottoro" class="image">
+    
+    <script>
+        let bth = document.querySelector('#submit');
+
+        bth.addEventListener('click', function() {
+            let name = document.querySelector('#name').value;
+            let password = document.querySelector('#password').value;
+            let email = document.querySelector('#email').value;
+            let state = document.querySelector('[name="state"]:checked').value;
+
+            text = `name=${name}&&password=${password}&&email=${email}&&state=${state}`;
+            console.log(text);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('POST', './register.php', true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.send(text);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState != 4) return;
+
+                if (xhr.status != 200) {
+                    console.warn(xhr.status + ': ' + xhr.statusText);
+                } else {
+                    console.log(xhr);
+                    if (xhr.response == 'Ошибка получения данных') {
+                        alert("Ошибка регистрации")
+                    } else {
+                        window.location.href = './main'
+                    }
+                }
+            };
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+.post {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #2e5aa5;
+  -webkit-border-radius: 7px;
+          border-radius: 7px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-left: 25%;
+  margin-right: 25%;
+  color: #fff;
+}
+.register {
+  display: none;
+}
+#donate {
+  position: fixed;
+  top: 80%;
+  left: 96%;
+  width: 75px;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4Lmxlc3MiLCJpbmRleC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxxQkFBQTtFQUFBLHNCQUFBO0VBQUEsa0JBQUE7RUFBQSxxQkFBQTtFQUFBLGNBQUE7RUFDQSwwQkFBQTtFQUFBLHVDQUFBO0tBQUEsdUJBQUE7TUFBQSx1QkFBQTtVQUFBLCtCQUFBO0VBQ0EsMEJBQUE7RUFDQSwyQkFBQTtVQUFBLG1CQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7Q0NDRDtBREVEO0VBQ0UsY0FBQTtDQ0FEO0FER0Q7RUFDRSxnQkFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0VBQ0EsWUFBQTtDQ0REIiwiZmlsZSI6ImluZGV4LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wb3N0e1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIGJhY2tncm91bmQtY29sb3I6ICMyZTVhYTU7XG4gIGJvcmRlci1yYWRpdXM6IDdweDtcbiAgcGFkZGluZzogMTBweDtcbiAgbWFyZ2luLXRvcDogNXB4O1xuICBtYXJnaW4tbGVmdDogMjUlO1xuICBtYXJnaW4tcmlnaHQ6IDI1JTtcbiAgY29sb3I6ICNmZmY7XG59XG5cbi5yZWdpc3RlcntcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI2RvbmF0ZXtcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDgwJTtcbiAgbGVmdDogOTYlO1xuICB3aWR0aDogNzVweDtcbn0iLCIucG9zdCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzJlNWFhNTtcbiAgYm9yZGVyLXJhZGl1czogN3B4O1xuICBwYWRkaW5nOiAxMHB4O1xuICBtYXJnaW4tdG9wOiA1cHg7XG4gIG1hcmdpbi1sZWZ0OiAyNSU7XG4gIG1hcmdpbi1yaWdodDogMjUlO1xuICBjb2xvcjogI2ZmZjtcbn1cbi5yZWdpc3RlciB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG4jZG9uYXRlIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDgwJTtcbiAgbGVmdDogOTYlO1xuICB3aWR0aDogNzVweDtcbn1cbiJdfQ== */

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta   charset="UTF-8" />
+<meta   name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<meta   http-equiv="X-UA-Compatible"
+        content="ie=edge" />
+
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <title>PixelArt</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body id="body">
+<script>
+    sessionStorage.setItem('person', '');
+    if (sessionStorage.getItem('person')) {
+        document.location.href = document.location.href + 'main.html';
+    }
+</script>
+<nav class="nav nav_between">
+    <a class="nav__logo" href="./index.html">
+        <img src="img/Icon.png" alt="">
+    </a>
+    <div class="nav__search">
+        <div class="search">
+            <input type="text" id="searchText" name="search" class="nav__input" required>
+            <select name="" id="navSelect" class="nav__select">
+                <option value="Все">Все</option>
+            </select>
+            <button class="search__active" value="Поиск" id="searchAction">Поиск</button>
+        </div>
+    </div>
+    <div class="nav__log">
+        <a href="./login.html" class="nav__sign-in" id="signIn">Вход</a>
+        <button class="nav__sign-out" id="signOut">Выход</button>
+    </div>
+</nav>
+<script src="js/nav.js" defer></script>
+<main class="main">
+    <div class="container">
+    <!--
+
+    -->
+    <div class="post">
+        <div class="text">
+            <h3> Назввание </h3>
+            <p> Описание </p>
+            <p> Тематика </p>
+            <p> Препод </p>
+        </div>
+
+        <div class="photo">
+            <!-- Фото -->
+        </div>
+    </div>
+
+    <div class="register" id="form">
+        <h2 class="register__title">Регистрация</h2>
+        <div class="register__form">
+            <div class="register__item">
+                <label class="register__label">Имя</label>
+                <input type="login" class="register__value" name="name" id="name" required>
+            </div>
+            <div class="register__item">
+                <label class="register__label">Пароль</label>
+                <input type="password" class="register__value" name="password" id="password" required>
+            </div>
+            <div class="register__item">
+                <label class="register__label">Почта</label>
+                <input type="text" class="register__value" name="email" id="email">
+            </div>
+            <div class="register__item register__item_flex">
+                <label class="register__label register__label_inline">Ученик</label>
+                <input type="radio" name="state" value="off" class="register__radio" checked>
+                <label class="register__label register__label_inline">Учитель</label>
+                <input type="radio" name="state" value="on" class="register__radio">
+            </div>
+        </div>
+        <div class="register__submit">
+            <a href="./login.html" class="register__login">Уже зарегистрирован</a>
+            <button type="submit" id="submit" class="register__submit-i">Отправить</button>
+        </div>
+    </div>
+    </div>
+</main>
+<script>
+    var submit = document.querySelector('#submit');
+    var form = document.querySelector('#form');
+
+    submit.addEventListener('click', function(e) {
+        e.preventDefault();
+        let inputs = form.querySelectorAll('input');
+        let text = '';
+        for (let i = 0; i < inputs.length; i++) {
+            console.log(inputs[i])
+            if (inputs[i].type == 'radio'){
+                if (inputs[i].checked) {
+                    text += `${text ? '&&' : ''}${inputs[i].name}="${inputs[i].value}"`
+                }
+            } else {
+                text += `${text ? '&&' : ''}${inputs[i].name}="${inputs[i].value}"`
+            }
+        }
+
+        let xhr = new XMLHttpRequest();
+
+        xhr.open('POST', 'register.php', true);
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xhr.send(text);
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState != 4) return;
+
+            if (xhr.status != 200) {
+                alert(xhr.status + ': ' + xhr.statusText)
+            } else {}
+        }
+    });
+;</script>
+</body>
+</html>

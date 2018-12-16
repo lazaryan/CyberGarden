@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="css/teachprofile.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+</head>
+<body>
+    <nav class="nav nav_between">
+    <div class="nav__logo">
+        <img src="img/Icon.png" alt="">
+    </div>
+    <div class="nav__search">
+        <div class="search">
+            <input type="text" id="searchText" name="search" class="nav__input" required>
+            <select name="" id="navSelect" class="nav__select"> </select>
+            <button class="search__active" value="Поиск" id="searchAction">Поиск</button>
+        </div>
+    </div>
+    <div class="nav__log">
+        <button class="nav__sign-in" id="signIn">Sign In</button>
+        <button class="nav__sign-out" id="signOut">Sign Out</button>
+    </div>
+</nav>
+<script src="js/nav.js" defer></script>
+<div class="container">
+    <div class="body">
+
+        <div class="side">
+
+            <div class="list">
+                <p> Курсы валки леса </p> <button id="edit.btn"> Изменить </button> <button id="delete_btn"> Удалить </button>
+            </div>
+
+            <div class="add" id="addCard">
+                <p> Добавить </p>
+            </div>
+
+        </div>
+
+        <div class="center">
+            <h3> Название кружка </h3>
+            <p> Краткое описание </p>
+            <!-- Картиночки -->
+            <p>Дни недели и время</p>
+            <p>Место</p>
+        </div>
+
+    </div>
+</div>
+<link rel="stylesheet" href="css/admin.css">
+
+<div class="create-card" id="redactorCard" style="display: none">
+    <span id="closeRedactor" class="close-redactor"></span>
+    <select name="category" id="categoryNewCard" class="">
+        <option value="Репетиторство">Репетиторство</option>
+        <option value="Спорт">Спорт</option>
+    </select>
+    <h2> Заголовок </h2>
+    <textarea name="title" id="cardNewTitle" cols="30" rows="10" required></textarea>
+    <h2> Текст </h2>
+    <textarea name="description" id="cardNewDesk" cols="30" rows="10" required></textarea>
+    <button id="sendNewCard">Отправить</button>
+</div>
+
+<script src="js/admin.js" defer></script>
+</body>
+</html>
